@@ -10,7 +10,7 @@ server.use(bodyParser.json());
 server.use(cors());
 
 //post api data
-server.post('/demo',async(req ,resp) => {
+server.post('/',async(req ,resp) => {
 
     let user = new User();
     user.username = req.body.username;                   //should match with schema
@@ -23,7 +23,7 @@ server.post('/demo',async(req ,resp) => {
 })
 
 //get api daata
-server.get('/demo',async(req, resp) => {
+server.get('/',async(req, resp) => {
     const docs = await User.find({});
                                 // u can give condition in side {} like - usernsame etc
     resp.json(docs);
