@@ -30,9 +30,9 @@ server.get('/',async(req, resp) => {
 })
 
 //connect DB
-const dburl = 'mongodb+srv://sujay03:sujay03@cluster0.23hwmxr.mongodb.net/logindata?retryWrites=true&w=majority';
+const DBURL = 'mongodb+srv://sujay03:sujay03@cluster0.23hwmxr.mongodb.net/logindata?retryWrites=true&w=majority';
 
-mongoose.connect(dburl).then(() => {
+mongoose.connect(DBURL).then(() => {
     console.log('mongooDB is connected...');
 }).catch((err) => console.log('MongoDB not connected...'));
 
