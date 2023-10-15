@@ -1,14 +1,15 @@
-require('dotenv').config()
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-Parser');
 const mongoose = require('mongoose');
+const dotenv = require("dotenv");
 
-const port = 8080;
+const PORT = process.env.PORT || 8080;
 const server = express();
 server.use(bodyParser.json());
 server.use(cors());
 
+dotenv.config()
 //post api data
 server.post('/log',async(req ,resp) => {
 
@@ -49,6 +50,6 @@ const loginschema = new mongoose.Schema({
 const User = mongoose.model('User' , loginschema);   //model
 //       any name          name of db
 
-server.listen(process.env.PORT,()=>{
-    console.log('server started at',port);
+server.listen(PORT,()=>{
+    console.log('server started at',PORT);
 })
