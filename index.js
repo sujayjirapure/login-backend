@@ -30,6 +30,9 @@ server.get('/log',async(req, resp) => {
     resp.json(docs);
 })
 
+
+
+
 server.get('/',async(req, resp) => {
     resp.send("api is running");
 })
